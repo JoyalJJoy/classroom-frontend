@@ -16,7 +16,7 @@ const SubjectsList = () => {
     const [SearchQuery, setSearchQuery] =  useState('');
     const [SelectedDeparment, setSelectedDeparment] =  useState('all');
     const departmentFilters = SelectedDeparment === 'all' ? [] : [
-        { field: 'department', operation: 'eq' as const, value : SelectedDeparment }, 
+        { field: 'department', operator: 'eq' as const, value : SelectedDeparment }, 
     ]
     const searchFilters = SearchQuery ? [
         {
@@ -90,7 +90,7 @@ const SubjectsList = () => {
         <div className="intro-row">
             <p>Qucik access to essential metrics and management tools.</p>
 
-            <div className="action-row"> 
+            <div className="actions-row"> 
                 <div className="search-field">
                     <Search className="search-icon" />
                     <Input 
